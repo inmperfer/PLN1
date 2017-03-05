@@ -2,8 +2,10 @@ import re
 from collections import Counter
 from os import walk
 
+
+
 def words(text): 
-	return re.findall(r'\w+', text.lower())
+	return re.findall(r'\w+', text.lower(), re.UNICODE)
 
 # Inicio WORDS con las palabras de los diccionarios
 # En este método no se aumentará la frecuencia de la palabra, si ya existe no se actualiza el numero de ocurrencias
@@ -17,10 +19,6 @@ def init_WORDS(dictionary_path):
     
 
 
-WORDS=init_WORDS('dictionary/es')
-print('size of WORDS={0}'.format(len(WORDS)))
-
-
 def train_WORDS(train_path):
     c_result = Counter()
     for (path, dirs, files) in walk(train_path):
@@ -29,8 +27,14 @@ def train_WORDS(train_path):
             c_result = c_result + Counter(words(open(path + '/' + f, encoding="utf-8").read()))
     return c_result
     
+WORDS=init_WORDS('dictionary/es')
+print('size of WORDS={0}'.format(len(WORDS)))
+
 WORDS_train=train_WORDS('train/es')
 print('size of WORDS train={0}'.format(len(WORDS_train)))
+
+WORDS=WORDS+WORDS_train
+print('size of WORDS after training={0}'.format(len(WORDS)))
 
 
 def P(word, N=sum(WORDS.values())): 
