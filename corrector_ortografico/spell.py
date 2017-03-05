@@ -5,38 +5,42 @@ from os import walk
 def words(text): 
 	return re.findall(r'\w+', text.lower())
 
-#WORDS = Counter(words(open('dictionary/es/big.txt').read()))
-
-WORDS=dict()
-
-def update_WORDS():
-    return
-
 # Inicio WORDS con las palabras de los diccionarios
-# En este método no se aumentará la frecuencia de la palabra, si ya existe no se actualiza
+# En este método no se aumentará la frecuencia de la palabra, si ya existe no se actualiza el numero de ocurrencias
 def init_WORDS(dictionary_path):
     c_result = Counter()
-    WORDS_result=dict()
     for (path, dirs, files) in walk(dictionary_path):
         for f in files:
             print('reading file {0} ...'.format(path + '/' + f))
             c_result = c_result | Counter(words(open(path + '/' + f, encoding="latin-1").read()))
-    WORDS_result=c_result
-    print('size of WORDS={0}'.format(len(WORDS_result)))
-    return WORDS_result
+    return c_result
     
 
 
-def train_WORDS():
-    return
+WORDS=init_WORDS('dictionary/es')
+print('size of WORDS={0}'.format(len(WORDS)))
+
+
+def train_WORDS(train_path):
+    c_result = Counter()
+    for (path, dirs, files) in walk(train_path):
+        for f in files:
+            print('reading file {0} ...'.format(path + '/' + f))
+            c_result = c_result + Counter(words(open(path + '/' + f, encoding="utf-8").read()))
+    return c_result
+    
+WORDS_train=train_WORDS('train/es')
+print('size of WORDS train={0}'.format(len(WORDS_train)))
+
 
 def P(word, N=sum(WORDS.values())): 
     "Probability of `word`."
     return WORDS[word] / N
 
+# Develve una lista de posibles palabras ordenadas por probabilidad
 def correction(word): 
-    "Most probable spelling correction for word."
-    return max(candidates(word), key=P)
+    return sorted(candidates(word), key=P)
+
 
 def candidates(word): 
     "Generate possible spelling corrections for word."
