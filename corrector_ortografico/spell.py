@@ -1,9 +1,34 @@
 import re
 from collections import Counter
+from os import walk
 
-def words(text): return re.findall(r'\w+', text.lower())
+def words(text): 
+	return re.findall(r'\w+', text.lower())
 
-WORDS = Counter(words(open('big.txt').read()))
+#WORDS = Counter(words(open('dictionary/es/big.txt').read()))
+
+WORDS=dict()
+
+def update_WORDS():
+    return
+
+# Inicio WORDS con las palabras de los diccionarios
+# En este método no se aumentará la frecuencia de la palabra, si ya existe no se actualiza
+def init_WORDS(dictionary_path):
+    c_result = Counter()
+    WORDS_result=dict()
+    for (path, dirs, files) in walk(dictionary_path):
+        for f in files:
+            print('reading file {0} ...'.format(path + '/' + f))
+            c_result = c_result | Counter(words(open(path + '/' + f, encoding="latin-1").read()))
+    WORDS_result=c_result
+    print('size of WORDS={0}'.format(len(WORDS_result)))
+    return WORDS_result
+    
+
+
+def train_WORDS():
+    return
 
 def P(word, N=sum(WORDS.values())): 
     "Probability of `word`."
@@ -21,9 +46,10 @@ def known(words):
     "The subset of `words` that appear in the dictionary of WORDS."
     return set(w for w in words if w in WORDS)
 
+# Añado el caracter ñ	
 def edits1(word):
     "All edits that are one edit away from `word`."
-    letters    = 'abcdefghijklmnopqrstuvwxyz'
+    letters    = 'abcdefghijklmnñopqrstuvwxyz'
     splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
     deletes    = [L + R[1:]               for L, R in splits if R]
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
@@ -34,3 +60,6 @@ def edits1(word):
 def edits2(word): 
     "All edits that are two edits away from `word`."
     return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+	
+def edits3(word):
+	return
