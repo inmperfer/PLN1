@@ -1,9 +1,19 @@
 import re
+import requests
 from collections import Counter
 from os import walk
 
 
 
+def exist_word(w):
+    result=False
+    url ="https://glosbe.com/gapi/translate?from=spa&dest=spa&format=json&phrase={0}".format(w)
+    resp = requests.get(url).json()
+    if(resp['result'] == 'ok'):
+        if(len(resp['tuc'])>0):
+            result=True
+    return result
+    
 def words(text): 
 	return re.findall(r'\w+', text.lower(), re.UNICODE)
 
@@ -14,7 +24,7 @@ def init_WORDS(dictionary_path):
     for (path, dirs, files) in walk(dictionary_path):
         for f in files:
             print('reading file {0} ...'.format(path + '/' + f))
-            c_result = c_result | Counter(words(open(path + '/' + f, encoding="latin-1").read()))
+            c_result = c_result | Counter(words(open(path + '/' + f, encoding="utf-8").read()))
     return c_result
     
 
@@ -26,15 +36,16 @@ def train_WORDS(train_path):
             print('reading file {0} ...'.format(path + '/' + f))
             c_result = c_result + Counter(words(open(path + '/' + f, encoding="utf-8").read()))
     return c_result
-    
-WORDS=init_WORDS('dictionary/es')
-print('size of WORDS={0}'.format(len(WORDS)))
+ 
+WORDS=dict()
+#WORDS=init_WORDS('dictionary/es')
+#print('size of WORDS={0}'.format(len(WORDS)))
 
 WORDS_train=train_WORDS('train/es')
-print('size of WORDS train={0}'.format(len(WORDS_train)))
+print('size of WORDS_train={0}'.format(len(WORDS_train)))
 
-WORDS=WORDS+WORDS_train
-print('size of WORDS after training={0}'.format(len(WORDS)))
+#WORDS=WORDS+WORDS_train
+#print('size of WORDS after training={0}'.format(len(WORDS)))
 
 
 def P(word, N=sum(WORDS.values())): 
