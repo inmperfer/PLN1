@@ -4,17 +4,23 @@ from collections import Counter
 from os import walk
 
 
+def export_csv():
+    with open('WORDS_es.csv', 'w') as f:
+        [f.write('{0},{1}\n'.format(key, value)) for key, value in WORDS.items()]
 
+
+        
 def exist_word_in_dict(w):
     result=False
     url ="https://glosbe.com/gapi/translate?from=spa&dest=spa&format=json&phrase={0}".format(w)
+    print(url)
     resp = requests.get(url).json()
     if('result' in resp):
         if(resp['result'] == 'ok'):
             if('tuc' in resp):
-                if(len(resp['tuc'])>0):
-                    result=True
+                result=True            
     return result
+    
     
 def words(text): 
 	return re.findall(r'\w+', text.lower(), re.UNICODE)
@@ -37,12 +43,10 @@ def train_WORDS(train_path):
         for f in files:
             print('reading file {0} ...'.format(path + '/' + f))
             ws = words(open(path + '/' + f, encoding="utf-8").read())
-            print('longitud antes de filtrar={0}'.format(len(ws)))
-            ws = list(filter(lambda x: exist_word_in_dict(x)==False, ws))
-            print('longitud despues de filtrar={0}'.format(len(ws)))
             c_result = c_result + Counter(ws)
     return c_result
  
+    
 WORDS=dict()
 WORDS=init_WORDS('dictionary/es')
 print('size of WORDS={0}'.format(len(WORDS)))
@@ -50,8 +54,13 @@ print('size of WORDS={0}'.format(len(WORDS)))
 WORDS_train=train_WORDS('train/es')
 print('size of WORDS_train={0}'.format(len(WORDS_train)))
 
+# remove = [w for w in WORDS_train if exist_word_in_dict(w)==False]
+# for r in remove: del WORDS_train[r]
+
 WORDS=WORDS+WORDS_train
 print('size of WORDS after training={0}'.format(len(WORDS)))
+
+export_csv()
 
 
 def P(word, N=sum(WORDS.values())): 
