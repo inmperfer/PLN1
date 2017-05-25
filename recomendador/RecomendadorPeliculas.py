@@ -245,7 +245,17 @@ def crearColeccionTextos(peliculas):
     return textos
 
 
+def crearColeccionGeneros(peliculas):
+    print("Creando colección global de géneros")
+    generos = []
+    
+    for elemento in peliculas:
+        pelicula = peliculas[elemento]
+        genero = pelicula['generos']
+        
+        generos.append(genero)
 
+    return generos
 ##########################################################################
 ### Paso 4: Creación del diccionario de palabras
 ##########################################################################
@@ -264,6 +274,12 @@ def crearColeccionTextos(peliculas):
 def crearDiccionario(textos):
     print("Creación del diccionario global")
     return corpora.Dictionary(textos)
+    
+    
+def crearDiccionarioGeneros(generos):
+    print("Creación del diccionario de géneros")
+    return corpora.Dictionary(generos)
+
 
 
 ##########################################################################
@@ -441,6 +457,9 @@ peliculas   = leerPeliculas(50)
 #palabras    = preprocesarPeliculas(peliculas)
 #textos      = crearColeccionTextos(peliculas)
 #diccionario = crearDiccionario(textos)
+
+genres     = crearColeccionGeneros(peliculas)
+genre_dict = crearDiccionarioGeneros(genres)
 #corpus      = crearCorpus(diccionario)
 #pel_tfidf   = crearTfIdf(corpus)
 #(lsi,indice)= crearLSA(corpus,pel_tfidf)
