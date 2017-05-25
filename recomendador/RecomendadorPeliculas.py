@@ -52,6 +52,12 @@
 ### con el código de película, y a continuación el texto correspondiente.
 ###
 
+import ast
+
+def getListOfGenres(genres_metadata):
+    return list(ast.literal_eval(genres_metadata).values())
+
+    
 
 def leerPeliculas(maxPeliculas = 0):
     ## Creamos un diccionario inicial para contener todas
@@ -78,12 +84,18 @@ def leerPeliculas(maxPeliculas = 0):
         tituloPelicula = metadatos[2]
         # metadatos[3] -> Fecha
         fechaPelicula = metadatos[3]
+ 
+        # metadatos[8] -> Géneros
+        generosPelicula = metadatos[8]
+
 
         pelicula = {}
         pelicula['codigo'] = codigoPelicula
         pelicula['titulo'] = tituloPelicula
         pelicula['fecha'] = fechaPelicula
-
+        pelicula['generos'] = getListOfGenres(generosPelicula)
+        
+        
         peliculas[codigoPelicula] = pelicula
 
     ## Fase 2: Leemos las sinopsis de las películas y las
@@ -117,7 +129,9 @@ def leerPeliculas(maxPeliculas = 0):
         pelicula = peliculas[peliculaCodigo]
 
         resumen = pelicula.get('resumen',0)
-        if (resumen != 0):
+        generos = pelicula.get('generos', 0)
+        print("Generos = ", generos)
+        if (resumen != 0)  and (generos!= 0):
             contadorCompletas += 1
             peliculasCompletas[peliculaCodigo] = pelicula
 
@@ -424,11 +438,10 @@ def crearModeloSimilitud(peliculas, pel_tfidf, lsi,indice, salida=None):
         ficheroSalida.close()
     
 peliculas   = leerPeliculas(50)
-palabras    = preprocesarPeliculas(peliculas)
-textos      = crearColeccionTextos(peliculas)
-diccionario = crearDiccionario(textos)
-corpus      = crearCorpus(diccionario)
-pel_tfidf   = crearTfIdf(corpus)
-(lsi,indice)= crearLSA(corpus,pel_tfidf)
-# crearModeloSimilitud(peliculas,pel_tfidf,lsi,indice,"peliculasSimilares.txt")
-crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice)
+#palabras    = preprocesarPeliculas(peliculas)
+#textos      = crearColeccionTextos(peliculas)
+#diccionario = crearDiccionario(textos)
+#corpus      = crearCorpus(diccionario)
+#pel_tfidf   = crearTfIdf(corpus)
+#(lsi,indice)= crearLSA(corpus,pel_tfidf)
+#crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice)
