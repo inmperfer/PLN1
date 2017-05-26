@@ -1,0 +1,152 @@
+============================
+Pelicula I = 18002177  Abhimanyu
+   Similitud: 0.840272   ==> Pelicula J = 18545794  Achanak
+============================
+Pelicula I = 2308633  Eureka
+============================
+Pelicula I = 14589005  Little Miss Broadway
+============================
+Pelicula I = 36284183  Danger
+   Similitud: 0.80588   ==> Pelicula J = 24932519  Blade on the Feather
+============================
+Pelicula I = 12848974  Let It Be Me
+   Similitud: 0.720336   ==> Pelicula J = 10131206  Zipping Along
+============================
+Pelicula I = 172577  Kangaroo Jack
+============================
+Pelicula I = 26693888  Shalabam
+   Similitud: 0.760865   ==> Pelicula J = 6099029  Thammudu
+   Similitud: 0.793631   ==> Pelicula J = 20842172  A Boyfriend for Christmas
+============================
+Pelicula I = 21733496  The Hitchhiker
+   Similitud: 0.902853   ==> Pelicula J = 6667989  Tormented
+============================
+Pelicula I = 6161511  Subash Chandra Bose
+============================
+Pelicula I = 10620698  Shaolin Rescuers
+   Similitud: 0.747171   ==> Pelicula J = 1381483  The Great St Trinian's Train Robbery
+============================
+Pelicula I = 9457115  Hello Sister, Goodbye Life
+   Similitud: 0.811813   ==> Pelicula J = 1617266  Find Me Guilty
+============================
+Pelicula I = 18545794  Achanak
+   Similitud: 0.840272   ==> Pelicula J = 18002177  Abhimanyu
+============================
+Pelicula I = 20570658  Sheitan
+============================
+Pelicula I = 3602432  Don Donald
+   Similitud: 0.999121   ==> Pelicula J = 34509089  Across the Plains
+   Similitud: 0.826482   ==> Pelicula J = 20520727  Half Empty Saddles
+============================
+Pelicula I = 4084601  The Trial
+============================
+Pelicula I = 1690123  The Edge of the World
+============================
+Pelicula I = 898561  Antwone Fisher
+   Similitud: 0.89687   ==> Pelicula J = 6099029  Thammudu
+============================
+Pelicula I = 24932519  Blade on the Feather
+   Similitud: 0.80588   ==> Pelicula J = 36284183  Danger
+   Similitud: 0.731469   ==> Pelicula J = 3229741  Shattered
+   Similitud: 0.860915   ==> Pelicula J = 1226289  Bless the Child
+============================
+Pelicula I = 28097123  Vision - From the Life of Hildegard von Bingen
+============================
+Pelicula I = 1617266  Find Me Guilty
+   Similitud: 0.811813   ==> Pelicula J = 9457115  Hello Sister, Goodbye Life
+============================
+Pelicula I = 6942306  Laughter in Paradise
+   Similitud: 1.0   ==> Pelicula J = 19163688  The Captain's Table
+   Similitud: 0.794274   ==> Pelicula J = 961777  Mermaids
+   Similitud: 0.858111   ==> Pelicula J = 7752732  The Comebacks
+============================
+Pelicula I = 32165121  Deep Space
+   Similitud: 0.76905   ==> Pelicula J = 14690165  The Phantom Planet
+============================
+Pelicula I = 30715135  Sket
+============================
+Pelicula I = 21888940  Tenderness
+   Similitud: 0.738687   ==> Pelicula J = 25456956  Director
+============================
+Pelicula I = 3229741  Shattered
+   Similitud: 0.731469   ==> Pelicula J = 24932519  Blade on the Feather
+============================
+Pelicula I = 6492828  The Pit and the Pendulum
+============================
+Pelicula I = 6099029  Thammudu
+   Similitud: 0.760865   ==> Pelicula J = 26693888  Shalabam
+   Similitud: 0.89687   ==> Pelicula J = 898561  Antwone Fisher
+   Similitud: 0.816816   ==> Pelicula J = 20842172  A Boyfriend for Christmas
+============================
+Pelicula I = 2096585  The Adventures of Mark Twain
+   Similitud: 1.0   ==> Pelicula J = 9776671  Nuestra tierra de paz
+============================
+Pelicula I = 5579722  Bad Company
+   Similitud: 0.762409   ==> Pelicula J = 2711663  Satan Met a Lady
+============================
+Pelicula I = 34509089  Across the Plains
+   Similitud: 0.999121   ==> Pelicula J = 3602432  Don Donald
+   Similitud: 0.812091   ==> Pelicula J = 20520727  Half Empty Saddles
+============================
+Pelicula I = 31718825  Fine Manners
+============================
+Pelicula I = 19163688  The Captain's Table
+   Similitud: 1.0   ==> Pelicula J = 6942306  Laughter in Paradise
+   Similitud: 0.794274   ==> Pelicula J = 961777  Mermaids
+   Similitud: 0.858111   ==> Pelicula J = 7752732  The Comebacks
+============================
+Pelicula I = 961777  Mermaids
+   Similitud: 0.794274   ==> Pelicula J = 6942306  Laughter in Paradise
+   Similitud: 0.794274   ==> Pelicula J = 19163688  The Captain's Table
+   Similitud: 0.830383   ==> Pelicula J = 7752732  The Comebacks
+============================
+Pelicula I = 20842172  A Boyfriend for Christmas
+   Similitud: 0.793631   ==> Pelicula J = 26693888  Shalabam
+   Similitud: 0.816816   ==> Pelicula J = 6099029  Thammudu
+============================
+Pelicula I = 2572851  Beowulf
+============================
+Pelicula I = 20520727  Half Empty Saddles
+   Similitud: 0.826482   ==> Pelicula J = 3602432  Don Donald
+   Similitud: 0.812091   ==> Pelicula J = 34509089  Across the Plains
+   Similitud: 0.902891   ==> Pelicula J = 10131206  Zipping Along
+============================
+Pelicula I = 10131206  Zipping Along
+   Similitud: 0.720336   ==> Pelicula J = 12848974  Let It Be Me
+   Similitud: 0.902891   ==> Pelicula J = 20520727  Half Empty Saddles
+============================
+Pelicula I = 1226289  Bless the Child
+   Similitud: 0.860915   ==> Pelicula J = 24932519  Blade on the Feather
+============================
+Pelicula I = 9776671  Nuestra tierra de paz
+   Similitud: 1.0   ==> Pelicula J = 2096585  The Adventures of Mark Twain
+============================
+Pelicula I = 3033155  King Kong Lives
+============================
+Pelicula I = 19165774  The Wreck of the Mary Deare
+============================
+Pelicula I = 30872204  Land of Plenty
+============================
+Pelicula I = 24539738  Somebody Killed Her Husband
+============================
+Pelicula I = 14690165  The Phantom Planet
+   Similitud: 0.76905   ==> Pelicula J = 32165121  Deep Space
+============================
+Pelicula I = 6667989  Tormented
+   Similitud: 0.902853   ==> Pelicula J = 21733496  The Hitchhiker
+============================
+Pelicula I = 1381483  The Great St Trinian's Train Robbery
+   Similitud: 0.747171   ==> Pelicula J = 10620698  Shaolin Rescuers
+============================
+Pelicula I = 7752732  The Comebacks
+   Similitud: 0.858111   ==> Pelicula J = 6942306  Laughter in Paradise
+   Similitud: 0.858111   ==> Pelicula J = 19163688  The Captain's Table
+   Similitud: 0.830383   ==> Pelicula J = 961777  Mermaids
+============================
+Pelicula I = 2711663  Satan Met a Lady
+   Similitud: 0.762409   ==> Pelicula J = 5579722  Bad Company
+============================
+Pelicula I = 25456956  Director
+   Similitud: 0.738687   ==> Pelicula J = 21888940  Tenderness
+============================
+Pelicula I = 5103474  Tamala 2010: A Punk Cat in Space

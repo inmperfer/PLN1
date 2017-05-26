@@ -290,10 +290,11 @@ def crearDiccionarioGeneros(generos):
 ### previamente pre-procesados y transformados usando el diccionario
 ###
 
-def crearCorpus(diccionario):
+def crearCorpus(diccionario, coleccion):
     print("Creación del corpus global con los resúmenes de todas las películas")
-    return [diccionario.doc2bow(texto) for texto in textos]
+    return [diccionario.doc2bow(texto) for texto in coleccion]
 
+            
 '''
 peliculas   = leerPeliculas(10)
 palabras    = preprocesarPeliculas(peliculas)
@@ -392,7 +393,7 @@ import numpy as np
 TOTAL_TOPICOS_LSA = 20 # numero de dimensiones
 UMBRAL_SIMILITUD = 0.7 
 
-def crearLSA(corpus,pel_tfidf):
+def crearLSA(corpus, pel_tfidf, diccionario):
     print("Creación del modelo LSA: Latent Semantic Analysis")
     numpy_matrix = gensim.matutils.corpus2dense(corpus, num_terms = 50000)
     svd = np.linalg.svd(numpy_matrix, full_matrices=False, compute_uv = False)
@@ -411,12 +412,12 @@ def crearCodigosPeliculas(peliculas):
         codigosPeliculas.append(pelicula['codigo'])
     return codigosPeliculas
 
-def crearModeloSimilitud(peliculas, pel_tfidf, lsi,indice, salida=None):
+def crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice, salida=None):
     codigosPeliculas = crearCodigosPeliculas(peliculas)
     print("Creando enlaces de similitud entre películas")
     if (salida != None):
         print("Generando salida en fichero ",salida)
-        ficheroSalida = open(salida,"w")
+        ficheroSalida = open(salida, "w", encoding="utf-8")
         
     for i, doc in enumerate(pel_tfidf):
         print("============================")
@@ -452,15 +453,23 @@ def crearModeloSimilitud(peliculas, pel_tfidf, lsi,indice, salida=None):
 
     if (salida != None):
         ficheroSalida.close()
-    
+ 
+# LECTURA DE PELICULAS
 peliculas   = leerPeliculas(50)
-#palabras    = preprocesarPeliculas(peliculas)
-#textos      = crearColeccionTextos(peliculas)
-#diccionario = crearDiccionario(textos)
 
+# MATRIZ DE SIMILITUDES DEL METADATO SINOPSIS
+palabras    = preprocesarPeliculas(peliculas)
+textos      = crearColeccionTextos(peliculas)
+diccionario = crearDiccionario(textos)
+corpus      = crearCorpus(diccionario, textos)
+pel_tfidf   = crearTfIdf(corpus)
+(lsi,indice)= crearLSA(corpus,pel_tfidf, diccionario)
+crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice, salida='similitudes_sinopsis.txt')
+
+# MATRIZ DE SIMILITUDES DEL METADATO GENERO
 genres     = crearColeccionGeneros(peliculas)
-genre_dict = crearDiccionarioGeneros(genres)
-#corpus      = crearCorpus(diccionario)
-#pel_tfidf   = crearTfIdf(corpus)
-#(lsi,indice)= crearLSA(corpus,pel_tfidf)
-#crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice)
+diccionario_genre = crearDiccionarioGeneros(genres)
+corpus_genre = crearCorpus(diccionario_genre, genres)
+gen_tfidf   = crearTfIdf(corpus_genre)
+(lsi_genre, indice_genre)= crearLSA(corpus_genre, gen_tfidf, diccionario_genre)
+crearModeloSimilitud(peliculas, gen_tfidf, lsi_genre, indice_genre, salida='similitudes_genre.txt')

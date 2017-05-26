@@ -1,0 +1,116 @@
+============================
+Pelicula I = 18002177  Abhimanyu
+   Similitud: 0.986409   ==> Pelicula J = 26693888  Shalabam
+============================
+Pelicula I = 2308633  Eureka
+============================
+Pelicula I = 14589005  Little Miss Broadway
+============================
+Pelicula I = 36284183  Danger
+============================
+Pelicula I = 12848974  Let It Be Me
+   Similitud: 0.855171   ==> Pelicula J = 172577  Kangaroo Jack
+============================
+Pelicula I = 172577  Kangaroo Jack
+   Similitud: 0.855171   ==> Pelicula J = 12848974  Let It Be Me
+============================
+Pelicula I = 26693888  Shalabam
+   Similitud: 0.986409   ==> Pelicula J = 18002177  Abhimanyu
+============================
+Pelicula I = 21733496  The Hitchhiker
+   Similitud: 0.932057   ==> Pelicula J = 3229741  Shattered
+============================
+Pelicula I = 6161511  Subash Chandra Bose
+============================
+Pelicula I = 10620698  Shaolin Rescuers
+============================
+Pelicula I = 9457115  Hello Sister, Goodbye Life
+   Similitud: 0.832386   ==> Pelicula J = 961777  Mermaids
+============================
+Pelicula I = 18545794  Achanak
+============================
+Pelicula I = 20570658  Sheitan
+   Similitud: 0.867935   ==> Pelicula J = 20842172  A Boyfriend for Christmas
+============================
+Pelicula I = 3602432  Don Donald
+============================
+Pelicula I = 4084601  The Trial
+   Similitud: 0.702008   ==> Pelicula J = 1617266  Find Me Guilty
+============================
+Pelicula I = 1690123  The Edge of the World
+============================
+Pelicula I = 898561  Antwone Fisher
+============================
+Pelicula I = 24932519  Blade on the Feather
+============================
+Pelicula I = 28097123  Vision - From the Life of Hildegard von Bingen
+============================
+Pelicula I = 1617266  Find Me Guilty
+   Similitud: 0.702008   ==> Pelicula J = 4084601  The Trial
+============================
+Pelicula I = 6942306  Laughter in Paradise
+============================
+Pelicula I = 32165121  Deep Space
+============================
+Pelicula I = 30715135  Sket
+============================
+Pelicula I = 21888940  Tenderness
+   Similitud: 0.733565   ==> Pelicula J = 1226289  Bless the Child
+============================
+Pelicula I = 3229741  Shattered
+   Similitud: 0.932057   ==> Pelicula J = 21733496  The Hitchhiker
+============================
+Pelicula I = 6492828  The Pit and the Pendulum
+============================
+Pelicula I = 6099029  Thammudu
+============================
+Pelicula I = 2096585  The Adventures of Mark Twain
+============================
+Pelicula I = 5579722  Bad Company
+============================
+Pelicula I = 34509089  Across the Plains
+============================
+Pelicula I = 31718825  Fine Manners
+============================
+Pelicula I = 19163688  The Captain's Table
+   Similitud: 0.864613   ==> Pelicula J = 19165774  The Wreck of the Mary Deare
+============================
+Pelicula I = 961777  Mermaids
+   Similitud: 0.832386   ==> Pelicula J = 9457115  Hello Sister, Goodbye Life
+============================
+Pelicula I = 20842172  A Boyfriend for Christmas
+   Similitud: 0.867935   ==> Pelicula J = 20570658  Sheitan
+============================
+Pelicula I = 2572851  Beowulf
+============================
+Pelicula I = 20520727  Half Empty Saddles
+============================
+Pelicula I = 10131206  Zipping Along
+============================
+Pelicula I = 1226289  Bless the Child
+   Similitud: 0.733565   ==> Pelicula J = 21888940  Tenderness
+============================
+Pelicula I = 9776671  Nuestra tierra de paz
+============================
+Pelicula I = 3033155  King Kong Lives
+============================
+Pelicula I = 19165774  The Wreck of the Mary Deare
+   Similitud: 0.864613   ==> Pelicula J = 19163688  The Captain's Table
+============================
+Pelicula I = 30872204  Land of Plenty
+============================
+Pelicula I = 24539738  Somebody Killed Her Husband
+============================
+Pelicula I = 14690165  The Phantom Planet
+============================
+Pelicula I = 6667989  Tormented
+============================
+Pelicula I = 1381483  The Great St Trinian's Train Robbery
+============================
+Pelicula I = 7752732  The Comebacks
+============================
+Pelicula I = 2711663  Satan Met a Lady
+============================
+Pelicula I = 25456956  Director
+============================
+Pelicula I = 5103474  Tamala 2010: A Punk Cat in Space
