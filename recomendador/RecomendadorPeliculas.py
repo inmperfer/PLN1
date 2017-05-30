@@ -53,6 +53,10 @@
 ###
 
 import ast
+import gensim
+import nltk
+#nltk.download()
+
 
 def getListOfGenres(genres_metadata):
     return list(ast.literal_eval(genres_metadata).values())
@@ -130,8 +134,7 @@ def leerPeliculas(maxPeliculas = 0):
 
         resumen = pelicula.get('resumen',0)
         generos = pelicula.get('generos', 0)
-        print("Generos = ", generos)
-        if (resumen != 0)  and (generos!= 0):
+        if ((resumen != 0)  and (generos!=0) and (len(generos)> 0)):
             contadorCompletas += 1
             peliculasCompletas[peliculaCodigo] = pelicula
 
@@ -149,9 +152,6 @@ def leerPeliculas(maxPeliculas = 0):
 ##########################################################################
 ### Paso 2: Preprocesado y limpieza de los resúmenes de las películas
 ##########################################################################
-
-import nltk
-#nltk.download()
 
 
 from nltk.tokenize import RegexpTokenizer
@@ -229,7 +229,7 @@ def preprocesarPeliculas(peliculas):
 ### Paso 3: Creación de la colección de textos
 ##########################################################################
 
-from gensim import corpora, models, similarities
+
     
 def crearColeccionTextos(peliculas):
     print("Creando colección global de resúmenes")
@@ -295,13 +295,6 @@ def crearCorpus(diccionario, coleccion):
     return [diccionario.doc2bow(texto) for texto in coleccion]
 
             
-'''
-peliculas   = leerPeliculas(10)
-palabras    = preprocesarPeliculas(peliculas)
-textos      = crearColeccionTextos(peliculas)
-diccionario = crearDiccionario(textos)
-corpus      = crearCorpus(diccionario)
-'''
 
 ### En este momento podemos revisar el contenido de la información
 ### obtenida.
@@ -361,19 +354,11 @@ def crearTfIdf(corpus):
     corpus_tfidf = tfidf[corpus]
     return corpus_tfidf
 
-'''
-peliculas   = leerPeliculas(50)
-palabras    = preprocesarPeliculas(peliculas)
-textos      = crearColeccionTextos(peliculas)
-diccionario = crearDiccionario(textos)
-corpus      = crearCorpus(diccionario)
-pel_tfidf   = crearTfIdf(corpus)
-'''
 
 '''
 ### >>> print(corpus[8][:20])
 ### [(0, 1), (1, 18), (2, 117), (4, 1), (5, 36), (8, 1), (11, 12), (12, 42), (14, 16), (15, 4), (21, 44), (22, 1), (23, 7), (25, 2), (31, 1), (34, 14), (35, 1), (37, 1), (39, 1), (53, 4)]
-### >>> print(pel_tfidf[8][:20])
+### >>> print(sinop_tfidf[8][:20])
 ### [(0, 0.00762910434797757), (1, 0.025451519972774662), (4, 0.010198378012720392), (8, 0.00762910434797757), (11, 0.008011540113419483), (14, 0.01068205348455931), (15, 0.005655893327283258), (22, 0.00762910434797757), (23, 0.015820766458248765), (25, 0.020396756025440783), (31, 0.005806175672270604), (34, 0.009346796798989396), (35, 0.00762910434797757), (37, 0.00762910434797757), (39, 0.00762910434797757), (53, 0.012947608030111121), (57, 0.005806175672270604), (60, 0.03051641739191028), (61, 0.0323690200752778), (65, 0.017568809361799154)]
 '''
 
@@ -385,26 +370,16 @@ pel_tfidf   = crearTfIdf(corpus)
 # la dimension en la que trabajamos es muy elevada (len(diccionario))
 # vamos a usar una técnica para reducir la dimensionalidad (latent semantic analysis, LSA) Tambien LSI
 # lo consigue con operaciones matriciales. Es un modelo puramente matemático
-import gensim
-import numpy as np
+from gensim import corpora, models, similarities
 
-### Valores clave para controlar el proceso
-# el producto vectorial es mas fiable
-TOTAL_TOPICOS_LSA = 20 # numero de dimensiones
-UMBRAL_SIMILITUD = 0.7 
+def crearLSA(corpus, matrix_tfidf, diccionario, num_topics):
+    print("Creación del modelo LSA: Latent Semantic Analysis")  
+    lsi = models.LsiModel(matrix_tfidf, id2word=diccionario, num_topics=num_topics)
+    indice = similarities.MatrixSimilarity(lsi[matrix_tfidf])
+    return (lsi, indice)
 
-def crearLSA(corpus, pel_tfidf, diccionario):
-    print("Creación del modelo LSA: Latent Semantic Analysis")
-    numpy_matrix = gensim.matutils.corpus2dense(corpus, num_terms = 50000)
-    svd = np.linalg.svd(numpy_matrix, full_matrices=False, compute_uv = False)
     
-    # punto clave donde indico las dimensiones que quiero manejar
-    lsi = models.LsiModel(pel_tfidf, id2word=diccionario, num_topics=TOTAL_TOPICOS_LSA)
-
-    indice = similarities.MatrixSimilarity(lsi[pel_tfidf])
-
-    return (lsi,indice)
-
+    
 def crearCodigosPeliculas(peliculas):
     codigosPeliculas = []
     for i, elemento in enumerate(peliculas):
@@ -412,30 +387,36 @@ def crearCodigosPeliculas(peliculas):
         codigosPeliculas.append(pelicula['codigo'])
     return codigosPeliculas
 
-def crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice, salida=None):
+     
+def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None):
     codigosPeliculas = crearCodigosPeliculas(peliculas)
     print("Creando enlaces de similitud entre películas")
     if (salida != None):
         print("Generando salida en fichero ",salida)
         ficheroSalida = open(salida, "w", encoding="utf-8")
         
-    for i, doc in enumerate(pel_tfidf):
+    for i, (doc_sinop, doc_genre) in enumerate(zip(sinop_tfidf, gen_tfidf)):    
         print("============================")
         peliculaI = peliculas[codigosPeliculas[i]]
-        print("Pelicula I = ",i,"  ",peliculaI['codigo'],"  ",peliculaI['titulo'])
-
+        print("Pelicula I = ",i,"  ",peliculaI['codigo'],"  ", peliculaI['titulo'])
+        
         if (salida != None):
             ficheroSalida.write("============================")
             ficheroSalida.write("\n")
             ficheroSalida.write("Pelicula I = " + peliculaI['codigo'] + "  " + peliculaI['titulo'])
             ficheroSalida.write("\n")
-            
-        vec_lsi = lsi[doc]
-        #print(vec_lsi)
-        indice_similitud = indice[vec_lsi]
+         
+        vec_lsi_sinopsis = lsi_sinop[doc_sinop]
+        vec_lsi_genre = lsi_genre[doc_genre]
+        
+        indice_similitud_sinopsis = indice_sinop[vec_lsi_sinopsis]
+        indice_similitud_genre = indice_genre[vec_lsi_genre]
+
         similares = []
         for j, elemento in enumerate(peliculas):
-            s = indice_similitud[j]
+            s = (weight_sinopsis * indice_similitud_sinopsis[j]) + (weight_genero * indice_similitud_genre[j])
+            #♣print("TOTAL= {0} | sinopsis= {1}| genero={2}".format(s, indice_similitud_sinopsis[j], indice_similitud_genre[j] ))
+            
             # i!j para que no me añada como pelicula similar ella misma
             if (s > UMBRAL_SIMILITUD) & (i != j):
                 peliculaJ = peliculas[codigosPeliculas[j]]
@@ -453,23 +434,32 @@ def crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice, salida=None):
 
     if (salida != None):
         ficheroSalida.close()
- 
+
+        
 # LECTURA DE PELICULAS
 peliculas   = leerPeliculas(50)
 
 # MATRIZ DE SIMILITUDES DEL METADATO SINOPSIS
+TOTAL_TOPICOS_LSA_SINOPSIS = 20 
 palabras    = preprocesarPeliculas(peliculas)
 textos      = crearColeccionTextos(peliculas)
 diccionario = crearDiccionario(textos)
 corpus      = crearCorpus(diccionario, textos)
-pel_tfidf   = crearTfIdf(corpus)
-(lsi,indice)= crearLSA(corpus,pel_tfidf, diccionario)
-crearModeloSimilitud(peliculas, pel_tfidf, lsi, indice, salida='similitudes_sinopsis.txt')
+sinop_tfidf   = crearTfIdf(corpus)
+(lsi_sinop, indice_sinop)= crearLSA(corpus, sinop_tfidf, diccionario, TOTAL_TOPICOS_LSA_SINOPSIS)
+
 
 # MATRIZ DE SIMILITUDES DEL METADATO GENERO
+TOTAL_TOPICOS_LSA_GENERO = 82
 genres     = crearColeccionGeneros(peliculas)
 diccionario_genre = crearDiccionarioGeneros(genres)
 corpus_genre = crearCorpus(diccionario_genre, genres)
 gen_tfidf   = crearTfIdf(corpus_genre)
-(lsi_genre, indice_genre)= crearLSA(corpus_genre, gen_tfidf, diccionario_genre)
-crearModeloSimilitud(peliculas, gen_tfidf, lsi_genre, indice_genre, salida='similitudes_genre.txt')
+(lsi_genre, indice_genre)= crearLSA(corpus_genre, gen_tfidf, diccionario_genre, TOTAL_TOPICOS_LSA_GENERO)
+
+
+# MODELO SIMILITUD SINOPSIS + GÉNERO
+UMBRAL_SIMILITUD = 0.5
+WEIGHT_SINOPSIS=0.7
+WEIGHT_GENERO=0.3  
+crearModeloSimilitud(peliculas, WEIGHT_SINOPSIS, WEIGHT_GENERO, salida='similitudes_genre&sinopsis.txt')
