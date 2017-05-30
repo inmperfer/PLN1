@@ -53,7 +53,6 @@
 ###
 
 import ast
-import gensim
 import nltk
 #nltk.download()
 
@@ -196,7 +195,7 @@ def preprocesarPeliculas(peliculas):
     nombresPropios = []
 
     for elemento in peliculas:
-        print("Preproceso: ",elemento)
+        #print("Preproceso: ",elemento)
 
         pelicula = peliculas[elemento]
 
@@ -275,12 +274,6 @@ def crearDiccionario(textos):
     print("Creación del diccionario global")
     return corpora.Dictionary(textos)
     
-    
-def crearDiccionarioGeneros(generos):
-    print("Creación del diccionario de géneros")
-    return corpora.Dictionary(generos)
-
-
 
 ##########################################################################
 ### Paso 5: Creación del corpus de resúmenes preprocesados
@@ -291,7 +284,7 @@ def crearDiccionarioGeneros(generos):
 ###
 
 def crearCorpus(diccionario, coleccion):
-    print("Creación del corpus global con los resúmenes de todas las películas")
+    print("Creación del corpus global")
     return [diccionario.doc2bow(texto) for texto in coleccion]
 
             
@@ -373,7 +366,8 @@ def crearTfIdf(corpus):
 from gensim import corpora, models, similarities
 
 def crearLSA(corpus, matrix_tfidf, diccionario, num_topics):
-    print("Creación del modelo LSA: Latent Semantic Analysis")  
+    print("Creación del modelo LSA (Latent Semantic Analysis)")
+    print("Dimensiones = {0}".format(num_topics))
     lsi = models.LsiModel(matrix_tfidf, id2word=diccionario, num_topics=num_topics)
     indice = similarities.MatrixSimilarity(lsi[matrix_tfidf])
     return (lsi, indice)
@@ -389,21 +383,25 @@ def crearCodigosPeliculas(peliculas):
 
      
 def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None):
-    codigosPeliculas = crearCodigosPeliculas(peliculas)
     print("Creando enlaces de similitud entre películas")
+    print("Peso para sinopsis = {0}".format(weight_sinopsis))
+    print("Peso para género = {0}".format(weight_genero))
+    
+    codigosPeliculas = crearCodigosPeliculas(peliculas)
+    
     if (salida != None):
-        print("Generando salida en fichero ",salida)
+        print("Generando salida en fichero ", salida)
         ficheroSalida = open(salida, "w", encoding="utf-8")
         
     for i, (doc_sinop, doc_genre) in enumerate(zip(sinop_tfidf, gen_tfidf)):    
         print("============================")
         peliculaI = peliculas[codigosPeliculas[i]]
-        print("Pelicula I = ",i,"  ",peliculaI['codigo'],"  ", peliculaI['titulo'])
+        print("[{0}] [{2}] Película I = {1}".format(i, peliculaI['titulo'], peliculaI['codigo'] ))
         
         if (salida != None):
             ficheroSalida.write("============================")
             ficheroSalida.write("\n")
-            ficheroSalida.write("Pelicula I = " + peliculaI['codigo'] + "  " + peliculaI['titulo'])
+            ficheroSalida.write("[{0}] [{2}] Película I = {1}".format(i, peliculaI['titulo'], peliculaI['codigo'] ))
             ficheroSalida.write("\n")
          
         vec_lsi_sinopsis = lsi_sinop[doc_sinop]
@@ -415,31 +413,32 @@ def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None)
         similares = []
         for j, elemento in enumerate(peliculas):
             s = (weight_sinopsis * indice_similitud_sinopsis[j]) + (weight_genero * indice_similitud_genre[j])
-            #♣print("TOTAL= {0} | sinopsis= {1}| genero={2}".format(s, indice_similitud_sinopsis[j], indice_similitud_genre[j] ))
             
             # i!j para que no me añada como pelicula similar ella misma
-            if (s > UMBRAL_SIMILITUD) & (i != j):
-                peliculaJ = peliculas[codigosPeliculas[j]]
+            if (i != j):                
                 similares.append((codigosPeliculas[j], s))
                 
-                print("   Similitud: ",s,"   ==> Pelicula J = ",j,"  ",peliculaJ['codigo'],"  ",peliculaJ['titulo'])
-                if (salida != None):
-                    ficheroSalida.write("   Similitud: " + str(s) + "   ==> Pelicula J = " + peliculaJ['codigo'] + "  " + peliculaJ['titulo'])
-                    ficheroSalida.write("\n")
+        similares = sorted(similares, key=lambda item: -item[1])[0:3]
+            
+        for p in similares:
+            peliculaJ=peliculas[p[0]]
+            print("   Similitud: {0}    ==> [{2}] Película J = {1}".format(round(p[1], 3), peliculaJ['titulo'], peliculaJ['codigo']))
+            if (salida != None):
+                ficheroSalida.write("   Similitud: {0}    ==> [{2}] Película J = {1}".format(round(p[1], 4), peliculaJ['titulo'], peliculaJ['codigo']))
+                ficheroSalida.write("\n")
                     
-            similares = sorted(similares, key=lambda item: -item[1])
-
-            peliculaI['similares'] = similares
-            peliculaI['totalSimilares'] = len(similares)
+        peliculaI['similares'] = similares
 
     if (salida != None):
         ficheroSalida.close()
 
         
 # LECTURA DE PELICULAS
+print("=============  Lectura metadatos  ===============")
 peliculas   = leerPeliculas(50)
 
 # MATRIZ DE SIMILITUDES DEL METADATO SINOPSIS
+print("=============  Matriz similitud para Sinopsis  ===============")
 TOTAL_TOPICOS_LSA_SINOPSIS = 20 
 palabras    = preprocesarPeliculas(peliculas)
 textos      = crearColeccionTextos(peliculas)
@@ -450,16 +449,17 @@ sinop_tfidf   = crearTfIdf(corpus)
 
 
 # MATRIZ DE SIMILITUDES DEL METADATO GENERO
+print("=============  Matriz similitud para Género  ===============")
 TOTAL_TOPICOS_LSA_GENERO = 82
 genres     = crearColeccionGeneros(peliculas)
-diccionario_genre = crearDiccionarioGeneros(genres)
+diccionario_genre = crearDiccionario(genres)
 corpus_genre = crearCorpus(diccionario_genre, genres)
 gen_tfidf   = crearTfIdf(corpus_genre)
 (lsi_genre, indice_genre)= crearLSA(corpus_genre, gen_tfidf, diccionario_genre, TOTAL_TOPICOS_LSA_GENERO)
 
 
 # MODELO SIMILITUD SINOPSIS + GÉNERO
-UMBRAL_SIMILITUD = 0.5
+print("=============  Creación modelo similitud Películas ===============")
 WEIGHT_SINOPSIS=0.7
 WEIGHT_GENERO=0.3  
 crearModeloSimilitud(peliculas, WEIGHT_SINOPSIS, WEIGHT_GENERO, salida='similitudes_genre&sinopsis.txt')
