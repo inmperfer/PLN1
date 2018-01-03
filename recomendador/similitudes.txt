@@ -1,0 +1,300 @@
+============================
+[0] [26393161] Película I = Dam 999
+   Similitud: 0.1453    ==> [75255] Película J = The Naked Spur
+   Similitud: 0.1432    ==> [16725337] Película J = December Heat
+   Similitud: 0.0978    ==> [18661279] Película J = Style
+   Similitud: 0.0969    ==> [24005728] Película J = Running Turtle
+============================
+[1] [29449916] Película I = Mickey's Champs
+   Similitud: 0.2468    ==> [3053338] Película J = BigLove
+   Similitud: 0.1971    ==> [16704261] Película J = Crazy Cruise
+   Similitud: 0.1318    ==> [9146440] Película J = The Bowling Alley Cat
+   Similitud: 0.097    ==> [31068635] Película J = The Woods Are Full Of Cuckoos
+============================
+[2] [2009711] Película I = It Came from Outer Space
+   Similitud: 0.1662    ==> [24064444] Película J = Sins of Silence
+   Similitud: 0.1241    ==> [786972] Película J = Casshern
+   Similitud: 0.1008    ==> [23992760] Película J = The Fourth Kind
+   Similitud: 0.0532    ==> [384990] Película J = Sex, Lies, and Videotape
+============================
+[3] [7998882] Película I = Gold Raiders
+   Similitud: 0.2604    ==> [14144161] Película J = Roar of the Iron Horse
+   Similitud: 0.169    ==> [75255] Película J = The Naked Spur
+   Similitud: 0.1373    ==> [10950017] Película J = The Easy Life
+   Similitud: 0.0979    ==> [561315] Película J = The Wizard of Oz
+============================
+[4] [16704261] Película I = Crazy Cruise
+   Similitud: 0.2437    ==> [3053338] Película J = BigLove
+   Similitud: 0.2387    ==> [9146440] Película J = The Bowling Alley Cat
+   Similitud: 0.1971    ==> [29449916] Película J = Mickey's Champs
+   Similitud: 0.1545    ==> [31068635] Película J = The Woods Are Full Of Cuckoos
+============================
+[5] [32907322] Película I = The Jackeroo of Coolabong
+   Similitud: 0.3076    ==> [24583492] Película J = After Midnight
+   Similitud: 0.0346    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.0214    ==> [31882143] Película J = Gods Own Child
+   Similitud: 0.0199    ==> [2009711] Película J = It Came from Outer Space
+============================
+[6] [9464777] Película I = The Method
+   Similitud: 0.1718    ==> [16725337] Película J = December Heat
+   Similitud: 0.1635    ==> [11143191] Película J = Tik Tik Tik
+   Similitud: 0.1455    ==> [18661279] Película J = Style
+   Similitud: 0.1129    ==> [19740679] Película J = Defying Gravity
+============================
+[7] [28858045] Película I = Syzyfowe prace
+   Similitud: 0.3145    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3121    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.3082    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.3048    ==> [8282525] Película J = David
+============================
+[8] [961459] Película I = Girls Town
+   Similitud: 0.1601    ==> [12111728] Película J = Charlie Bartlett
+   Similitud: 0.0754    ==> [8282525] Película J = David
+   Similitud: 0.0639    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.0611    ==> [22369520] Película J = Me, Mom, Dad and Her
+============================
+[9] [27758371] Película I = Fascinating Woman: The Temptation of Creampie
+   Similitud: 0.1748    ==> [786972] Película J = Casshern
+   Similitud: 0.0976    ==> [1334841] Película J = The Family Game
+   Similitud: 0.0869    ==> [15842539] Película J = Ecstasy of the Angels
+   Similitud: 0.0254    ==> [22369520] Película J = Me, Mom, Dad and Her
+============================
+[10] [11143191] Película I = Tik Tik Tik
+   Similitud: 0.2062    ==> [24185527] Película J = Raakh
+   Similitud: 0.1635    ==> [9464777] Película J = The Method
+   Similitud: 0.1595    ==> [2265234] Película J = Repeat Performance
+   Similitud: 0.1116    ==> [23992760] Película J = The Fourth Kind
+============================
+[11] [23401287] Película I = Yeh Dil
+   Similitud: 0.3107    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.2967    ==> [31601544] Película J = Then Nilavu
+   Similitud: 0.2375    ==> [12252981] Película J = Jalla! Jalla!
+   Similitud: 0.1983    ==> [18661279] Película J = Style
+============================
+[12] [18857800] Película I = The Red Dwarf
+   Similitud: 0.206    ==> [12252981] Película J = Jalla! Jalla!
+   Similitud: 0.188    ==> [3053338] Película J = BigLove
+   Similitud: 0.1479    ==> [18661279] Película J = Style
+   Similitud: 0.1347    ==> [16704261] Película J = Crazy Cruise
+============================
+[13] [75255] Película I = The Naked Spur
+   Similitud: 0.169    ==> [7998882] Película J = Gold Raiders
+   Similitud: 0.1453    ==> [26393161] Película J = Dam 999
+   Similitud: 0.1362    ==> [8649132] Película J = Compañeros
+   Similitud: 0.1032    ==> [2289802] Película J = Ride in the Whirlwind
+============================
+[14] [9009864] Película I = Murderers Among Us
+   Similitud: 0.1385    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.1316    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.128    ==> [18661279] Película J = Style
+   Similitud: 0.1259    ==> [31601544] Película J = Then Nilavu
+============================
+[15] [786972] Película I = Casshern
+   Similitud: 0.1748    ==> [27758371] Película J = Fascinating Woman: The Temptation of Creampie
+   Similitud: 0.1241    ==> [2009711] Película J = It Came from Outer Space
+   Similitud: 0.1053    ==> [23992760] Película J = The Fourth Kind
+   Similitud: 0.0973    ==> [75255] Película J = The Naked Spur
+============================
+[16] [9146440] Película I = The Bowling Alley Cat
+   Similitud: 0.2387    ==> [16704261] Película J = Crazy Cruise
+   Similitud: 0.166    ==> [3053338] Película J = BigLove
+   Similitud: 0.1318    ==> [29449916] Película J = Mickey's Champs
+   Similitud: 0.0897    ==> [18857800] Película J = The Red Dwarf
+============================
+[17] [2265234] Película I = Repeat Performance
+   Similitud: 0.1595    ==> [11143191] Película J = Tik Tik Tik
+   Similitud: 0.1105    ==> [561315] Película J = The Wizard of Oz
+   Similitud: 0.1084    ==> [10950017] Película J = The Easy Life
+   Similitud: 0.0956    ==> [24185527] Película J = Raakh
+============================
+[18] [8282525] Película I = David
+   Similitud: 0.3154    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3142    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.3071    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.3048    ==> [28858045] Película J = Syzyfowe prace
+============================
+[19] [30336596] Película I = Asha Jyoti
+   Similitud: 0.1475    ==> [31882143] Película J = Gods Own Child
+   Similitud: 0.0799    ==> [16725337] Película J = December Heat
+   Similitud: 0.0699    ==> [561315] Película J = The Wizard of Oz
+   Similitud: 0.0655    ==> [18661279] Película J = Style
+============================
+[20] [8649132] Película I = Compañeros
+   Similitud: 0.1362    ==> [75255] Película J = The Naked Spur
+   Similitud: 0.0746    ==> [15842539] Película J = Ecstasy of the Angels
+   Similitud: 0.0716    ==> [26393161] Película J = Dam 999
+   Similitud: 0.0693    ==> [2289802] Película J = Ride in the Whirlwind
+============================
+[21] [31068635] Película I = The Woods Are Full Of Cuckoos
+   Similitud: 0.1545    ==> [16704261] Película J = Crazy Cruise
+   Similitud: 0.109    ==> [19740679] Película J = Defying Gravity
+   Similitud: 0.097    ==> [29449916] Película J = Mickey's Champs
+   Similitud: 0.0829    ==> [3053338] Película J = BigLove
+============================
+[22] [9899883] Película I = Kadawunu Poronduwa
+   Similitud: 0.3213    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3151    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.3121    ==> [28858045] Película J = Syzyfowe prace
+   Similitud: 0.3081    ==> [34259689] Película J = Manasukkul Mathappu
+============================
+[23] [31601544] Película I = Then Nilavu
+   Similitud: 0.3015    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.2967    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.2258    ==> [12252981] Película J = Jalla! Jalla!
+   Similitud: 0.1661    ==> [18661279] Película J = Style
+============================
+[24] [3053338] Película I = BigLove
+   Similitud: 0.2468    ==> [29449916] Película J = Mickey's Champs
+   Similitud: 0.2437    ==> [16704261] Película J = Crazy Cruise
+   Similitud: 0.188    ==> [18857800] Película J = The Red Dwarf
+   Similitud: 0.166    ==> [9146440] Película J = The Bowling Alley Cat
+============================
+[25] [14144161] Película I = Roar of the Iron Horse
+   Similitud: 0.2604    ==> [7998882] Película J = Gold Raiders
+   Similitud: 0.1953    ==> [10950017] Película J = The Easy Life
+   Similitud: 0.144    ==> [561315] Película J = The Wizard of Oz
+   Similitud: 0.0753    ==> [2265234] Película J = Repeat Performance
+============================
+[26] [10950017] Película I = The Easy Life
+   Similitud: 0.1953    ==> [14144161] Película J = Roar of the Iron Horse
+   Similitud: 0.1373    ==> [7998882] Película J = Gold Raiders
+   Similitud: 0.1084    ==> [2265234] Película J = Repeat Performance
+   Similitud: 0.105    ==> [561315] Película J = The Wizard of Oz
+============================
+[27] [24583492] Película I = After Midnight
+   Similitud: 0.3076    ==> [32907322] Película J = The Jackeroo of Coolabong
+   Similitud: 0.0331    ==> [961459] Película J = Girls Town
+   Similitud: 0.0309    ==> [2265234] Película J = Repeat Performance
+   Similitud: 0.0269    ==> [7998882] Película J = Gold Raiders
+============================
+[28] [31510744] Película I = The Lucky One
+   Similitud: 0.3107    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.3015    ==> [31601544] Película J = Then Nilavu
+   Similitud: 0.2482    ==> [12252981] Película J = Jalla! Jalla!
+   Similitud: 0.2089    ==> [12978934] Película J = The Deep End of the Ocean
+============================
+[29] [24185527] Película I = Raakh
+   Similitud: 0.2062    ==> [11143191] Película J = Tik Tik Tik
+   Similitud: 0.1608    ==> [18661279] Película J = Style
+   Similitud: 0.159    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.1516    ==> [23401287] Película J = Yeh Dil
+============================
+[30] [31882143] Película I = Gods Own Child
+   Similitud: 0.1475    ==> [30336596] Película J = Asha Jyoti
+   Similitud: 0.1472    ==> [561315] Película J = The Wizard of Oz
+   Similitud: 0.1143    ==> [16704261] Película J = Crazy Cruise
+   Similitud: 0.0934    ==> [12978934] Película J = The Deep End of the Ocean
+============================
+[31] [1334841] Película I = The Family Game
+   Similitud: 0.1077    ==> [12978934] Película J = The Deep End of the Ocean
+   Similitud: 0.1051    ==> [12111728] Película J = Charlie Bartlett
+   Similitud: 0.0976    ==> [27758371] Película J = Fascinating Woman: The Temptation of Creampie
+   Similitud: 0.0747    ==> [18661279] Película J = Style
+============================
+[32] [12252981] Película I = Jalla! Jalla!
+   Similitud: 0.2482    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.2375    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.2258    ==> [31601544] Película J = Then Nilavu
+   Similitud: 0.2167    ==> [18661279] Película J = Style
+============================
+[33] [26834075] Película I = Punaradhivasam
+   Similitud: 0.3151    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.3142    ==> [8282525] Película J = David
+   Similitud: 0.3132    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3087    ==> [34259689] Película J = Manasukkul Mathappu
+============================
+[34] [15842539] Película I = Ecstasy of the Angels
+   Similitud: 0.0869    ==> [27758371] Película J = Fascinating Woman: The Temptation of Creampie
+   Similitud: 0.0746    ==> [8649132] Película J = Compañeros
+   Similitud: 0.0645    ==> [786972] Película J = Casshern
+   Similitud: 0.0554    ==> [26393161] Película J = Dam 999
+============================
+[35] [16725337] Película I = December Heat
+   Similitud: 0.207    ==> [18661279] Película J = Style
+   Similitud: 0.1718    ==> [9464777] Película J = The Method
+   Similitud: 0.1432    ==> [26393161] Película J = Dam 999
+   Similitud: 0.1291    ==> [24185527] Película J = Raakh
+============================
+[36] [12978934] Película I = The Deep End of the Ocean
+   Similitud: 0.2089    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.1077    ==> [1334841] Película J = The Family Game
+   Similitud: 0.0934    ==> [31882143] Película J = Gods Own Child
+   Similitud: 0.0818    ==> [16704261] Película J = Crazy Cruise
+============================
+[37] [34259689] Película I = Manasukkul Mathappu
+   Similitud: 0.3155    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3087    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.3081    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.3077    ==> [384990] Película J = Sex, Lies, and Videotape
+============================
+[38] [23992760] Película I = The Fourth Kind
+   Similitud: 0.1116    ==> [11143191] Película J = Tik Tik Tik
+   Similitud: 0.1053    ==> [786972] Película J = Casshern
+   Similitud: 0.1038    ==> [9464777] Película J = The Method
+   Similitud: 0.1008    ==> [2009711] Película J = It Came from Outer Space
+============================
+[39] [561315] Película I = The Wizard of Oz
+   Similitud: 0.1472    ==> [31882143] Película J = Gods Own Child
+   Similitud: 0.144    ==> [14144161] Película J = Roar of the Iron Horse
+   Similitud: 0.1105    ==> [2265234] Película J = Repeat Performance
+   Similitud: 0.105    ==> [10950017] Película J = The Easy Life
+============================
+[40] [24005728] Película I = Running Turtle
+   Similitud: 0.0969    ==> [26393161] Película J = Dam 999
+   Similitud: 0.0866    ==> [75255] Película J = The Naked Spur
+   Similitud: 0.0794    ==> [18661279] Película J = Style
+   Similitud: 0.0728    ==> [16725337] Película J = December Heat
+============================
+[41] [25125971] Película I = The Wife
+   Similitud: 0.0942    ==> [31510744] Película J = The Lucky One
+   Similitud: 0.0918    ==> [31601544] Película J = Then Nilavu
+   Similitud: 0.0903    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.0848    ==> [9464777] Película J = The Method
+============================
+[42] [35356742] Película I = Putin's Kiss
+   Similitud: 0.0408    ==> [23992760] Película J = The Fourth Kind
+   Similitud: 0.0332    ==> [384990] Película J = Sex, Lies, and Videotape
+   Similitud: 0.0322    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.0321    ==> [8282525] Película J = David
+============================
+[43] [22369520] Película I = Me, Mom, Dad and Her
+   Similitud: 0.3213    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.3155    ==> [34259689] Película J = Manasukkul Mathappu
+   Similitud: 0.3154    ==> [8282525] Película J = David
+   Similitud: 0.3145    ==> [28858045] Película J = Syzyfowe prace
+============================
+[44] [24064444] Película I = Sins of Silence
+   Similitud: 0.1662    ==> [2009711] Película J = It Came from Outer Space
+   Similitud: 0.0589    ==> [9899883] Película J = Kadawunu Poronduwa
+   Similitud: 0.0534    ==> [384990] Película J = Sex, Lies, and Videotape
+   Similitud: 0.0525    ==> [22369520] Película J = Me, Mom, Dad and Her
+============================
+[45] [384990] Película I = Sex, Lies, and Videotape
+   Similitud: 0.3086    ==> [22369520] Película J = Me, Mom, Dad and Her
+   Similitud: 0.3077    ==> [34259689] Película J = Manasukkul Mathappu
+   Similitud: 0.3065    ==> [26834075] Película J = Punaradhivasam
+   Similitud: 0.3025    ==> [9899883] Película J = Kadawunu Poronduwa
+============================
+[46] [12111728] Película I = Charlie Bartlett
+   Similitud: 0.1601    ==> [961459] Película J = Girls Town
+   Similitud: 0.1051    ==> [1334841] Película J = The Family Game
+   Similitud: 0.0829    ==> [18857800] Película J = The Red Dwarf
+   Similitud: 0.0806    ==> [19740679] Película J = Defying Gravity
+============================
+[47] [18661279] Película I = Style
+   Similitud: 0.2167    ==> [12252981] Película J = Jalla! Jalla!
+   Similitud: 0.207    ==> [16725337] Película J = December Heat
+   Similitud: 0.1983    ==> [23401287] Película J = Yeh Dil
+   Similitud: 0.1683    ==> [31510744] Película J = The Lucky One
+============================
+[48] [19740679] Película I = Defying Gravity
+   Similitud: 0.1129    ==> [9464777] Película J = The Method
+   Similitud: 0.109    ==> [31068635] Película J = The Woods Are Full Of Cuckoos
+   Similitud: 0.0806    ==> [12111728] Película J = Charlie Bartlett
+   Similitud: 0.0781    ==> [25125971] Película J = The Wife
+============================
+[49] [2289802] Película I = Ride in the Whirlwind
+   Similitud: 0.1032    ==> [75255] Película J = The Naked Spur
+   Similitud: 0.0868    ==> [7998882] Película J = Gold Raiders
+   Similitud: 0.0693    ==> [8649132] Película J = Compañeros
+   Similitud: 0.0281    ==> [25125971] Película J = The Wife
