@@ -382,10 +382,12 @@ def crearCodigosPeliculas(peliculas):
     return codigosPeliculas
 
      
-def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None):
+def crearModeloSimilitud(peliculas,sinop_tfidf, lsi_sinop, indice_sinop, weight_sinopsis, 
+                         gen_tfidf, lsi_genre, indice_genre,weight_genero, n_similares, salida=None):
     print("Creando enlaces de similitud entre películas")
     print("Peso para sinopsis = {0}".format(weight_sinopsis))
     print("Peso para género = {0}".format(weight_genero))
+    print("Número de películas similares = {0}".format(n_similares))
     
     codigosPeliculas = crearCodigosPeliculas(peliculas)
     
@@ -418,7 +420,7 @@ def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None)
             if (i != j):                
                 similares.append((codigosPeliculas[j], s))
                 
-        similares = sorted(similares, key=lambda item: -item[1])[0:3]
+        similares = sorted(similares, key=lambda item: -item[1])[0:n_similares]
             
         for p in similares:
             peliculaJ=peliculas[p[0]]
@@ -432,14 +434,14 @@ def crearModeloSimilitud(peliculas, weight_sinopsis, weight_genero, salida=None)
     if (salida != None):
         ficheroSalida.close()
 
-        
+#####CASO PRACTICO#####        
 # LECTURA DE PELICULAS
 print("=============  Lectura metadatos  ===============")
 peliculas   = leerPeliculas(50)
 
 # MATRIZ DE SIMILITUDES DEL METADATO SINOPSIS
 print("=============  Matriz similitud para Sinopsis  ===============")
-TOTAL_TOPICOS_LSA_SINOPSIS = 20 
+TOTAL_TOPICOS_LSA_SINOPSIS = 300 
 palabras    = preprocesarPeliculas(peliculas)
 textos      = crearColeccionTextos(peliculas)
 diccionario = crearDiccionario(textos)
@@ -449,17 +451,22 @@ sinop_tfidf   = crearTfIdf(corpus)
 
 
 # MATRIZ DE SIMILITUDES DEL METADATO GENERO
-print("=============  Matriz similitud para Género  ===============")
-TOTAL_TOPICOS_LSA_GENERO = 82
+print("=============  Matriz similitModeloud para Género  ===============")
+
+TOTAL_TOPICOS_LSA_GENERO = 82        
+
+
 genres     = crearColeccionGeneros(peliculas)
 diccionario_genre = crearDiccionario(genres)
 corpus_genre = crearCorpus(diccionario_genre, genres)
 gen_tfidf   = crearTfIdf(corpus_genre)
 (lsi_genre, indice_genre)= crearLSA(corpus_genre, gen_tfidf, diccionario_genre, TOTAL_TOPICOS_LSA_GENERO)
 
-
 # MODELO SIMILITUD SINOPSIS + GÉNERO
 print("=============  Creación modelo similitud Películas ===============")
 WEIGHT_SINOPSIS=0.7
-WEIGHT_GENERO=0.3  
-crearModeloSimilitud(peliculas, WEIGHT_SINOPSIS, WEIGHT_GENERO, salida='similitudes_genre&sinopsis.txt')
+WEIGHT_GENERO=0.3 
+N_SIMILITUD = 4 
+
+crearModeloSimilitud(peliculas,sinop_tfidf, lsi_sinop, indice_sinop, WEIGHT_SINOPSIS, 
+                         gen_tfidf, lsi_genre, indice_genre, WEIGHT_GENERO, N_SIMILITUD, salida='similitudes.txt')
